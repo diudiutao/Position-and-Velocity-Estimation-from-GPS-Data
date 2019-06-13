@@ -8,9 +8,9 @@ from numpy.linalg import inv
 import math
 import utm
 
-datosReales = pd.read_csv('RutaCortaReal.csv',
+datosReales = pd.read_csv('Ruta2Real.csv',
                           header=0)  # importa el archivo .csv e indica que el encabezado esta en la fila 0
-datosGPS = pd.read_csv('RutaCorta.csv',
+datosGPS = pd.read_csv('Ruta2.csv',
                        header=0)  # importa el archivo .csv e indica que el encabezado esta en la fila 0
 
 lonReal = datosReales['lon']
@@ -76,7 +76,7 @@ def GRAFICAS():
     plt.clf()
     plt.plot(velocidad, '.', label='Mediciones')
     plt.plot(vel, predichoV[:, 2], '.-', label='Estimacion')
-    plt.xlabel('V (m/s)')  # nombra el eje x
+    plt.ylabel('V (m/s)')  # nombra el eje x
     plt.title('Velocity')  # pone titulo a la grafica
     plt.legend()
     plt.show()
@@ -125,7 +125,7 @@ predicho = np.zeros((len(lonMed) * int(Niter), 2))
 predichoV = np.zeros((len(lonMed) * int(Niter), 3))
 vel = np.linspace(0, len(lonMed), len(lonMed) * int(Niter))
 aux2 = 0
-U = (velocidad.ix[0] / dt)
+
 
 for i in np.arange(0, len(lonMed)):
     U = ((velocidad.ix[0] - velocidad.ix[i]) / dt)
