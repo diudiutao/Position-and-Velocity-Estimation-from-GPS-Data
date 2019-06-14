@@ -90,9 +90,9 @@ def kf_predict(X, P, A, Q, B, U):
 * La variable Niter indica el número de iteraciones que se realizan entre cada medición
 * Ecuaciónes ingresadas:  
 
-![1](http://latex.codecogs.com/gif.latex?x_%7Bk%7D%20%3D%20x_%7Bk-1%7D%20&plus;%20v%5Ccdot%20%5CDelta%20t%20&plus;%20%5Cfrac%7B1%7D%7B2%7Da%5Ccdot%20%5CDelta%20t%5E%7B3%7D)  
+![1](http://latex.codecogs.com/gif.latex?x_%7Bk%7D%20%3D%20x_%7Bk-1%7D%20&plus;%20v%5Ccdot%20%5CDelta%20t%20&plus;%20%5Cfrac%7B1%7D%7B2%7Da%5Ccdot%20%5CDelta%20t%5E%7B2%7D)  
 
-![2](http://latex.codecogs.com/gif.latex?y_%7Bk%7D%20%3D%20y_%7Bk-1%7D%20&plus;%20v%5Ccdot%20%5CDelta%20t%20&plus;%20%5Cfrac%7B1%7D%7B2%7Da%5Ccdot%20%5CDelta%20t%5E%7B3%7D)
+![2](http://latex.codecogs.com/gif.latex?y_%7Bk%7D%20%3D%20y_%7Bk-1%7D%20&plus;%20v%5Ccdot%20%5CDelta%20t%20&plus;%20%5Cfrac%7B1%7D%7B2%7Da%5Ccdot%20%5CDelta%20t%5E%7B2%7D)
 
 ```
 GEOTOUTM()  # convierte de coordenadas geograficas a UTM(coordenadas X e Y)
