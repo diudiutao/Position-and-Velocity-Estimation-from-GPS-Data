@@ -87,8 +87,12 @@ def kf_predict(X, P, A, Q, B, U):
  ```
 
 # Aplicación 
+* La variable Niter indica el número de iteraciones que se realizan entre cada medición
+* Ecuaciónes ingresadas:  
 
-*La variable Niter indica el número de iteraciones que se realizan en un segundo  
+![1](http://latex.codecogs.com/gif.latex?x_%7Bk%7D%20%3D%20x_%7Bk-1%7D%20&plus;%20v%5Ccdot%20%5CDelta%20t%20&plus;%20%5Cfrac%7B1%7D%7B2%7Da%5Ccdot%20%5CDelta%20t%5E%7B3%7D)  
+
+![2](http://latex.codecogs.com/gif.latex?y_%7Bk%7D%20%3D%20y_%7Bk-1%7D%20&plus;%20v%5Ccdot%20%5CDelta%20t%20&plus;%20%5Cfrac%7B1%7D%7B2%7Da%5Ccdot%20%5CDelta%20t%5E%7B3%7D)
 
 ```
 GEOTOUTM()  # convierte de coordenadas geograficas a UTM(coordenadas X e Y)
@@ -143,8 +147,7 @@ for i in np.arange(0, len(lonMed)):
 
 GRAFICAS()
 
-Código para realizar la estimación de los datos obtenidos por un dispositivo receptor GPS
+# NOTAS
 * El archivo prueba2_1.py contiene el código de python en su version 2.7
-* Los archivos con extención .csv son los archiuvos de las trayectorias realizadas
-* El algoritmo hace una estimación de la posición cada 0.05 segundos
-* 
+* Los archivos con extención .csv son los archivos de las trayectorias realizadas
+* El algoritmo hace una estimación de la posición cada 0.05 segundos(Niter = 20)
