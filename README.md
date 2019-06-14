@@ -1,4 +1,4 @@
-# Explicación del código del argoritmo 
+# Explicación del código del algoritmo 
 ### Importar librerias necesarias
 ```inserta código
 import pandas as pd  # importa la libreria pandas y la nombra como pd
