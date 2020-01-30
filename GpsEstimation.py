@@ -7,9 +7,9 @@ from numpy.linalg import inv
 import math
 import utm
 
-datosReales = pd.read_csv('Ruta2Real.csv',
+datosReales = pd.read_csv('AjaviCurvaMediaReal2.csv',
                           header=0)  # importa el archivo .csv e indica que el encabezado esta en la fila 0
-datosGPS = pd.read_csv('Ruta2.csv',
+datosGPS = pd.read_csv('AjaviCurvaMedia.csv',
                        header=0)  # importa el archivo .csv e indica que el encabezado esta en la fila 0
 lonReal = datosReales['lon']
 latReal = datosReales['lat']
@@ -99,7 +99,7 @@ def kf_update(X, P, Y, H, R):
 GEOTOUTM()
 
 Niter = 2
-time = 1 #tiempo de muestreo
+time = 2 #tiempo de muestreo
 dt = (1.0 / Niter)*time
 # aceleracion en x e y
 ax = 0.0
@@ -135,7 +135,7 @@ print(len(lonReal))
 for i in np.arange(1, len(lonMed)):
     Exactitud = datosGPS['accuracy'].ix[i]
     R = np.diag(((Exactitud)**2,(Exactitud)**2,(Exactitud)**2,(Exactitud)**2))
-    if (i % ((len(lonMed)/len(lonReal)))) == 0:
+    if (i % ((len(lonMed)/len(lonReal))+1)) == 0:
         aux = aux + 1
         if aux >= (len(lonReal)-1):
             aux = aux-1
